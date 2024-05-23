@@ -1,0 +1,44 @@
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="text-center">Чистая душа</h1>
+          </div>
+          <div class="card-body">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="alert alert-danger">
+                  <ul>
+                    {% for message in messages %}
+                      <li>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            {% endwith %}
+            <form method="post">
+              <div class="mb-3">
+                <label for="username" class="form-label">Как вас зовут?</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Не стесняйся, чистая душа" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Какая душа тебе по нраву?</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Не переусердствуй" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Подпиши себя</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="С собачкой" required>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Пройти очистку</button>
+                <a  href="login"type="submit" class="btn btn-primary">Получить души</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
