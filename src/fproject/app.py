@@ -32,7 +32,6 @@ def login():
     return render_template('login.html')
 
 
-
 @app.route('/reg', methods=['GET', 'POST'])
 def reg():
     if request.method == 'POST':
